@@ -66,6 +66,7 @@ do {
 
 
         //Пишем кординаты x
+        System.out.println();
         System.out.println("    1   2   3");
         System.out.println();
 
