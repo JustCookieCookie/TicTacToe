@@ -53,10 +53,10 @@ do {
             System.out.println("----------------------");
             System.out.print("За кого играем (x или o)? ");
             String userXO = scanner.nextLine();
-            if (userXO.equals("o") || userXO.equals("O")) {
+            if (userXO.equalsIgnoreCase("o")) {
                 ticTacToe = 1;
                 break;
-            } else if (userXO.equals("x") || userXO.equals("X")) {
+            } else if (userXO.equalsIgnoreCase("x")) {
                 ticTacToe = 0;
                 break;
             } else {
@@ -345,11 +345,11 @@ do {
                 System.out.println("Сыграем ещё раз (Yes или No)? ");
                 userAnswer = scanner2.nextLine();
 
-                if (userAnswer.equals("No") || userAnswer.equals("NO") || userAnswer.equals("no")) {
-                    System.exit(0);
+                if (userAnswer.equalsIgnoreCase("no")) {
                     scanner.close();
                     scanner2.close();
-                } else if (userAnswer.equals("Yes") || userAnswer.equals("YES") || userAnswer.equals("yes")) {
+                    System.exit(0);
+                } else if (userAnswer.equalsIgnoreCase("yes")) {
                     ticTacToe = 10;
                     strips = 0;
                     line = 0;
@@ -368,12 +368,12 @@ do {
                     field[2][2] = " ";
                 }
 
-                if (!userAnswer.equals("No") && !userAnswer.equals("NO") && !userAnswer.equals("no") && !userAnswer.equals("Yes") && !userAnswer.equals("YES") && !userAnswer.equals("yes")) {
+                if (!userAnswer.equalsIgnoreCase("no") && !userAnswer.equalsIgnoreCase("yes")) {
                     System.out.println();
                     System.out.println("Я вас не понял!");
                     ticTacToe = 3;
                 }
-            } while (!userAnswer.equals("No") && !userAnswer.equals("NO") && !userAnswer.equals("no") && !userAnswer.equals("Yes") && !userAnswer.equals("YES") && !userAnswer.equals("yes"));
+            } while (!userAnswer.equalsIgnoreCase("no") && !userAnswer.equalsIgnoreCase("yes"));
         }
 
     } while (ticTacToe != 10);
